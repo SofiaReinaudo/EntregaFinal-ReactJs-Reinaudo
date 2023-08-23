@@ -1,0 +1,23 @@
+.botones {
+    width: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+#divBotones{
+    width: 300px;
+}
+
+#mas{
+    padding-left: 30px;
+}
+
+#contador{
+    font-size: 20px;
+    font-family:'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#btnAgregar{
+    margin-left: -24px;
+    margin-top: 5px;
+}
