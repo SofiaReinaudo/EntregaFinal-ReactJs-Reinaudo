@@ -13,8 +13,8 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav">
                         <div className="nav-item dropdown">
-                        <Link class="nav-link dropdown-toggle link-dark" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</Link>
-                            <div class="dropdown-menu">
+                        <Link className="nav-link dropdown-toggle link-dark" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</Link>
+                            <div className="dropdown-menu">
                                 <NavLink to={'/category/Remeras'} className="dropdown-item">Remeras</NavLink>
                                 <NavLink to={'/category/Faldas'} className="dropdown-item">Faldas</NavLink>
                                 <NavLink to={'/category/Vestidos'} className="dropdown-item">Vestidos</NavLink>
@@ -22,8 +22,8 @@ const NavBar = () => {
                             </div>
                         </div>  
                     </div>    
-                    <div class="nav-item link-dark">
-                            <Link to={'/'} class="nav-link">Contacto</Link>
+                    <div className="nav-item link-dark">
+                            <Link to={'/'} className="nav-link">Contacto</Link>
                         </div> 
                 </div>
                 <CartWidget/>

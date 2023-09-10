@@ -1,27 +1,44 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
-import { getProductsById } from "../../asyncMock";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../service/firebase/firebaseConfig";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
-
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
     const {itemId} = useParams()
 
     useEffect(() => {
-        getProductsById(itemId)
-        .then(response => {
-            setProduct(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+        setLoading(true)
+
+        const collectionRef = collection(db, "products")
+        const filteredCollectionRef = query(
+            collectionRef, 
+            where("id", "==", itemId)
+            );
+        
+        getDocs(filteredCollectionRef)
+            .then((querySnapshot) => {
+                if(!querySnapshot.empty){
+                    const doc = querySnapshot.docs[0];
+                    const data = doc.data();
+                    const productAdapted = {id: doc.id, ...data};
+                    setProduct(productAdapted);
+                } else{
+                    setProduct(null);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [itemId])
 
     return(
-        <div className="ItemDetailContainer">
-            <ItemDetail {...product}/>
-        </div>
+        <div className="ItemDetailContainer">{loading ? ( <p>Cargando...</p>) : product ? (<ItemDetail {...product} />) : (<p>El producto no existe.</p>)}</div>
     )
 }
 
