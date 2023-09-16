@@ -65,18 +65,18 @@ const OrderPage = () => {
 
   return (
     <div className="contenedor2">
-      <div className=" ">
+      <div>
         {loading ? (
-          <p className="">
+          <p>
             Cargando detalles de la orden...
           </p>
         ) : !orderData ? (
-          <p className="">La orden no existe.</p>
+          <p>La orden no existe.</p>
         ) : (
-          <div className="">
+          <div>
             <h2 className="tittle">
               Detalles de la Orden:{" "}
-              <p className="">{orderId}</p>
+              <p>{orderId}</p>
             </h2>
             {orderData.user ? (
               <div>
@@ -86,30 +86,30 @@ const OrderPage = () => {
                   {orderData.user.name || "No disponible"}
                 </p>
                 <p>
-                  <span className="">Teléfono:</span>{" "}
+                  <span>Teléfono:</span>{" "}
                   {orderData.user.phone || "No disponible"}
                 </p>
                 <p>
-                  <span className="">Email:</span>{" "}
+                  <span>Email:</span>{" "}
                   {orderData.user.email || "No disponible"}
                 </p>
-                <h3 className="">
+                <h3>
                   Detalles del Producto:
                 </h3>
                 {orderData.items.map((product, index) => (
                   <div key={index}>
                     <p>
-                      <span className="">
+                      <span>
                         Nombre del Producto:
                       </span>{" "}
                       {product.nombre || "No disponible"}
                     </p>
                     <p>
-                      <span className="">Cantidad:</span>{" "}
+                      <span>Cantidad:</span>{" "}
                       {product.cantidad || "No disponible"}
                     </p>
                     <p>
-                      <span className="">Precio por unidad:</span> $
+                      <span>Precio por unidad:</span> $
                       {product.precio || "No disponible"}
                     </p>
                     {index < orderData.items.length - 1 && (
@@ -117,14 +117,14 @@ const OrderPage = () => {
                     )}
                   </div>
                 ))}
-                <div className="">
-                  <h3 className="">
+                <div>
+                  <h3>
                     Total: ${total.toFixed(2)}
                   </h3>
                 </div>
               </div>
             ) : (
-              <p className="">Datos del usuario no disponibles.</p>
+              <p>Datos del usuario no disponibles.</p>
             )}
           </div>
         )}

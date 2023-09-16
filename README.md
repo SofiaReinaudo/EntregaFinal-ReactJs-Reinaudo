@@ -17,4 +17,4 @@ Para empezar, soy una jóven de 17 años la cual está emocionada de terminar un
 ### `npm start`
 Instalar paquetes npm:
 
-### npm install
+### `npm install`
