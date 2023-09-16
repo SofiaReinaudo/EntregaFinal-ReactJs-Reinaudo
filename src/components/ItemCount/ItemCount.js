@@ -1,31 +1,31 @@
 import { useState } from "react"
 import "./ItemCount.css"
 
-const ItemCount = ({stock, initial, onAdd,}) => {
+const ItemCount = ({stock, inicial, onAdd}) => {
 
-    const [quantity, setQuantity] = useState(initial)
+    const [cantidad, setCantidad] = useState(inicial);
     
-    const increment = () => {
-        if(quantity < stock){
-            setQuantity(quantity+1)
+    const incrementar = () => {
+        if (cantidad < stock) {
+            setCantidad(cantidad + 1);
         }
-    }
-
-    const decrement = () => {
-        if(quantity > 1){
-            setQuantity(quantity-1)
+    };
+    
+    const decrementar = () => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1);
         }
-    }
+    };
 
     return(
         <div>
-            <p id="contador">Cantidad: {quantity}</p>
+            <p id="contador">Cantidad: {cantidad}</p>
             <div class="btn-group" id="divBotones" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-dark botones" onClick={decrement}>-</button>
-                <button type="button" id="mas" className="btn btn-dark botones" onClick={increment}>+</button>
+                <button type="button" className="btn btn-dark botones" onClick={decrementar}>-</button>
+                <button type="button" id="mas" className="btn btn-dark botones" onClick={incrementar}>+</button>
             </div>
             <div>
-                <button id="btnAgregar" className="btn btn-dark" onClick={() => onAdd(quantity)} disabled={!stock}>Agregar al carrito</button>
+                <button id="btnAgregar" className="btn btn-dark" onClick={() => onAdd(cantidad)} disabled={!stock}>Agregar al carrito</button>
             </div>
         </div>
     )

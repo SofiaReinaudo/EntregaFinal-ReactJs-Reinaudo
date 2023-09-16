@@ -1,0 +1,30 @@
+.contenedor{
+    margin: 150px;
+}
+
+.btn2{
+    text-decoration: none;
+    color: white;
+}
+
+.inicio{
+    margin-left: 10px;
+}
+
+.iniciar:hover{
+    background-color: rgb(225, 176, 176);
+}
+
+.contraseña{
+    margin-left: 10px;
+}
+.inputs:focus{
+    background-color: rgb(225, 176, 176);
+}
+
+#IrCheckout{
+    background-color: rgb(225, 176, 176);
+    color: black;
+    margin-left: 10px;
+    border: 1px solid;
+}

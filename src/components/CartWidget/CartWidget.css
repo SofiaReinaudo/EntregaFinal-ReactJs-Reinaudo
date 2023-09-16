@@ -1,0 +1,10 @@
+#btnCart{
+    border: white;
+    background-color: rgba(213, 209, 209, 0);
+}
+
+.relative{
+    position:absolute;
+    margin: 20px;
+
+}

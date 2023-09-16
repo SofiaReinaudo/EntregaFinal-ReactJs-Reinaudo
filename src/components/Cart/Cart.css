@@ -1,0 +1,31 @@
+#staticBackdrop{
+    margin-left: -25px;
+    width: 270px;
+}
+#finalizar-compra{
+    margin-left: 6px;
+}
+
+.btn-rosa:hover{
+    background-color: rgb(249, 203, 203);
+    color:red;
+}
+
+.cart-total-title{
+    font-size: 18px;
+}
+
+.cart-tittle{
+    margin-left:7px;
+    color: rgb(232, 192, 192);
+}
+
+.modal-footer{
+    border-top: 1px solid rgb(207, 205, 205);
+    display: flex;
+    justify-content: center;
+}
+
+.modal-header{
+    border-bottom: 1px solid rgb(207, 205, 205);
+}

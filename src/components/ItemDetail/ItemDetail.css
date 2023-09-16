@@ -1,8 +1,6 @@
 .detailContainer{
     margin-right: -12px;
     margin-left: -12px;
-    /* width: 1500px; */
-    
 }
 
 .imgDetail{
@@ -24,4 +22,9 @@
 
 #precio{
     font-size: 25px;
+}
+
+#linkTerminar{
+    text-decoration: none;
+    color: white;
 }

@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        const collectionRef = collection(db, "products")
+        const collectionRef = collection(db, "items")
         const filteredCollectionRef = query(
             collectionRef, 
             where("id", "==", itemId)
